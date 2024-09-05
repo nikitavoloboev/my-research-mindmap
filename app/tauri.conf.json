@@ -1,29 +1,42 @@
 {
-	"productName": "Learn Anything",
-	"version": "0.1.0",
-	"identifier": "xyz.learnanything.desktop",
-	"build": {
-		"frontendDist": "https://dev.learn-anything.xyz",
-		"devUrl": "http://localhost:3000",
-		"beforeDevCommand": "bun dev"
-	},
-	"app": {
-		"windows": [
-			{
-				"title": "Learn Anything",
-				"width": 800,
-				"height": 600,
-				"resizable": true,
-				"fullscreen": false
-			}
-		],
-		"security": {
-			"csp": null
-		}
-	},
-	"bundle": {
-		"active": true,
-		"targets": "all",
-		"icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"]
-	}
+  "productName": "Learn Anything",
+  "version": "0.1.0",
+  "identifier": "xyz.learnanything.desktop",
+  "build": {
+    "frontendDist": "https://dev.learn-anything.xyz",
+    "devUrl": "http://localhost:3000",
+    "beforeDevCommand": "bun dev"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Learn Anything",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  },
+  "plugins": {
+    "deep-link": {
+      "desktop": {
+        "schemes": ["learn-anything"]
+      }
+    }
+  }
 }
