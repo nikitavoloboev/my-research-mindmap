@@ -2,18 +2,27 @@
 // it is responsible for adding and getting links into LA from API
 
 import { api, APIError } from "encore.dev/api"
-// import { startWorker } from "jazz-nodejs"
+import { startWorker } from "jazz-nodejs"
 import { secret } from "encore.dev/config"
+import log from "encore.dev/log"
 
 const jazzWorkerSecret = secret("jazzWorkerSecret")
 
-export const addPersonalLink = api(
+export const saveLink = api(
 	{ expose: true, method: "POST", path: "/save-link" },
-	async ({ url }: { url: string }): Promise<void> => {
+	// TODO: perhaps apiKey only is enough?
+	async ({ url, email, apiKey }: { url: string; email: string; apiKey: string }): Promise<void> => {
 		// const { worker } = await startWorker({
 		// 	accountID: "co_zhvp7ryXJzDvQagX61F6RCZFJB9",
 		// 	accountSecret: JAZZ_WORKER_SECRET
 		// })
+
+		// log.info(jazzWorkerSecret)
+
+		if (!url.includes("http")) {
+			throw APIError.invalidArgument("url must include http")
+		}
+		log.info("addPersonalLink", { url })
 	}
 )
 

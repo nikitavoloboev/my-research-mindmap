@@ -1,4 +1,4 @@
-import { api, APIError } from "encore.dev/api"
+import { api } from "encore.dev/api"
 // import { startWorker } from "jazz-nodejs"
 // import { ID } from "jazz-tools"
 import { secret } from "encore.dev/config"
@@ -10,9 +10,9 @@ const jazzPublicGlobalGroup = secret("jazzPublicGlobalGroup")
 
 export const testRoute = api(
 	{ expose: true, method: "GET", path: "/test" },
-	async ({}: {}): Promise<void> => {
-		console.log(jazzPublicGlobalGroup(), "group")
+	async ({}: {}): Promise<{ message: string }> => {
 		log.info("better logs from encore")
+		return { message: `Hello from encore` }
 	}
 )
 
