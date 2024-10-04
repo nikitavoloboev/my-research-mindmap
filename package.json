@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "@tauri-apps/cli": "^2.0.0-rc.17",
+    "@tauri-apps/plugin-dialog": "^2.0.0-rc.1",
     "@tauri-apps/plugin-fs": "^2.0.0-rc.2",
     "jazz-nodejs": "0.8.0"
   },
