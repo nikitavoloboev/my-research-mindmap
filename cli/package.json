@@ -1,0 +1,11 @@
+{
+	"name": "cli",
+	"scripts": {
+		"dev": "bun --watch main.ts"
+	},
+	"dependencies": {
+		"@effect/cli": "^0.44.5",
+		"@effect/platform-bun": "^0.45.5",
+		"@effect/platform-node": "^0.60.5"
+	}
+}
